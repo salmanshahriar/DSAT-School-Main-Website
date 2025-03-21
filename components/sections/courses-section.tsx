@@ -213,7 +213,7 @@ export default function CoursesSection() {
     price: "9,950",
     originalPrice: "12,500",
     currency: "BDT",
-    image: "/images/Flagship-Course-Banner.png",
+    image: "/images/courses-images/flagship-banner.png",
     details: [
       "Exam Strategy",
       "Demos Hacks",
