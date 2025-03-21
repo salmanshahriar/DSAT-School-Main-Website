@@ -5,12 +5,10 @@ import Navbar from "@/components/layout/navbar"
 import Footer from "@/components/layout/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 
-
 export const metadata: Metadata = {
   title: "DSAT School | Digital SAT Preparation",
   description:
     "Comprehensive Digital SAT preparation with practice tests, interactive quizzes, and personalized study plans",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -20,10 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className="font-sans bg-white text-gray-900 overflow-x-hidden"
-      >
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+      <body className="font-sans bg-white text-gray-900 overflow-x-hidden">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
           <Navbar />
           <main>{children}</main>
           <Footer />
@@ -32,5 +33,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
