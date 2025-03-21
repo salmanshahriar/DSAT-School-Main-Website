@@ -1,6 +1,6 @@
 import HeroSection from "@/components/sections/hero-section"
 import FeaturesSection from "@/components/sections/features-section"
-import CoursesSection from "@/components/sections/courses-section" // Changed this line
+import CoursesSection from "@/components/sections/courses-section"
 import TestimonialsSection from "@/components/sections/testimonials-section"
 import CollegePaySection from "@/components/sections/college-pay-section"
 import CTASection from "@/components/sections/cta-section"
