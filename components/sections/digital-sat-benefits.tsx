@@ -106,8 +106,8 @@ export default function DigitalSATBenefits() {
   return (
     <section className="py-20 bg-white relative">
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-50 rounded-full opacity-50 -translate-y-1/2 translate-x-1/3"></div>
-      <div className="absolute bottom-0 left-0 w-48 h-48 bg-indigo-50 rounded-full opacity-50 translate-y-1/3 -translate-x-1/4"></div>
+      {/* <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-50 rounded-full opacity-50 -translate-y-1/2 translate-x-1/3"></div> */}
+      {/* <div className="absolute bottom-0 left-0 w-48 h-48 bg-indigo-50 rounded-full opacity-50 translate-y-1/3 -translate-x-1/4"></div> */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
