@@ -361,7 +361,7 @@ export default function CoursesSection() {
               {/* Main Banner Image */}
               <div className="relative w-full">
                 <Image
-                  src="/images/Flagship-Course-Banner.png"
+                  src="/images/courses-images/flagship-banner.png"
                   alt="Flagship Premium Program"
                   width={1200}
                   height={400}
