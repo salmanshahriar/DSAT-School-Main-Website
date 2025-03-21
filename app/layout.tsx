@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Playfair_Display, Inter, Hind_Siliguri } from "next/font/google"
-import localFont from "next/font/local"
 import "./globals.css"
 import Navbar from "@/components/layout/navbar"
 import Footer from "@/components/layout/footer"
@@ -28,12 +27,6 @@ const hindSiliguri = Hind_Siliguri({
   display: "swap",
 })
 
-// Variable font for interactive elements
-const robotoFlex = localFont({
-  src: "../public/fonts/RobotoFlex-VariableFont.ttf",
-  variable: "--font-roboto-flex",
-  display: "swap",
-})
 
 export const metadata: Metadata = {
   title: "DSAT School | Digital SAT Preparation",
@@ -50,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${playfair.variable} ${inter.variable} ${hindSiliguri.variable} ${robotoFlex.variable} font-sans bg-white text-gray-900 overflow-x-hidden`}
+        className={`${playfair.variable} ${inter.variable} ${hindSiliguri.variable} font-sans bg-white text-gray-900 overflow-x-hidden`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Navbar />
