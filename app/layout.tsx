@@ -1,31 +1,9 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Playfair_Display, Inter, Hind_Siliguri } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/layout/navbar"
 import Footer from "@/components/layout/footer"
 import { ThemeProvider } from "@/components/theme-provider"
-
-// Primary font for all titles
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
-})
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-})
-
-// Bengali font
-const hindSiliguri = Hind_Siliguri({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-hind-siliguri",
-  display: "swap",
-})
 
 
 export const metadata: Metadata = {
@@ -43,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${playfair.variable} ${inter.variable} ${hindSiliguri.variable} font-sans bg-white text-gray-900 overflow-x-hidden`}
+        className="font-sans bg-white text-gray-900 overflow-x-hidden"
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Navbar />
@@ -56,5 +34,3 @@ export default function RootLayout({
 }
 
 
-
-import './globals.css'
