@@ -91,7 +91,7 @@ export default function StatsSection() {
     },
     {
       icon: <Users className="h-8 w-8" />,
-      value: 10000,
+      value: 1000,
       suffix: "+",
       label: "Students",
       description: "Students have trusted us with their SAT preparation journey",
@@ -233,7 +233,7 @@ export default function StatsSection() {
         </motion.div>
 
         {/* CTA Button */}
-        <motion.div
+        {/* <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -249,7 +249,7 @@ export default function StatsSection() {
               transition={{ duration: 0.4, ease: "easeInOut" }}
             />
           </Button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )

@@ -24,7 +24,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Programs", href: "/programs" },
-    { name: "Practice Tests", href: "/practice-tests" },
+    { name: "Practice Site", href: "https://qb.dsatschool.com/" },
     { name: "Resources", href: "/resources" },
     { name: "Team", href: "/team" },
     { name: "Contact", href: "/contact" },
@@ -87,15 +87,18 @@ export default function Navbar() {
             </PremiumAnimation>
 
             <PremiumAnimation type="slide" x={20}>
+              <Link  href="https://discord.gg/hBGFDBzA6g">
               <Button className="bg-primary text-white hover:bg-primary/90 font-medium relative overflow-hidden group shadow-md px-6 py-2 h-10 rounded-md">
-                <span className="relative z-10 tracking-wide">Book a Session</span>
+              <span className="relative z-10 tracking-wide">Join Discord</span>
+                    </Button>
+                 
                 <motion.div
                   className="absolute inset-0 bg-primary/90 opacity-0"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: "0%", opacity: 1 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                 />
-              </Button>
+              </Link>
             </PremiumAnimation>
           </StaggerContainer>
 
@@ -164,9 +167,11 @@ export default function Navbar() {
                   </Button>
                 </PremiumAnimation>
                 <PremiumAnimation type="slide" x={20}>
-                  <Button className="bg-primary text-white hover:bg-primary/90 w-full justify-start h-12 text-base">
-                    Book a Session
-                  </Button>
+                  <Link href="https://discord.gg/hBGFDBzA6g">
+                    <Button className="bg-primary text-white hover:bg-primary/90 w-full justify-start h-12 text-base">
+                      Join Discord
+                    </Button>
+                  </Link>
                 </PremiumAnimation>
               </div>
             </StaggerContainer>

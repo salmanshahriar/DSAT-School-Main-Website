@@ -12,6 +12,7 @@ import {
 } from "@/components/common/animations/premium-animations"
 import SimpleSpringTitle from "@/components/common/interactive/simple-spring-title"
 import OrbitImageCarousel from "@/components/common/interactive/orbit-image-carousel"
+import Link from "next/link"
 
 export default function HeroSection() {
   // Parallax effect for background elements
@@ -76,11 +77,14 @@ export default function HeroSection() {
 
             <StaggerContainer className="mt-5 flex flex-col sm:flex-row gap-6" delay={0.7} staggerChildren={0.1}>
               <PremiumAnimation type="slide" x={-20}>
+                
+                <Link href="https://qb.dsatschool.com/">
                 <Button
+
                   size="lg"
                   className="bg-white text-primary hover:bg-white/90 font-medium text-base px-10 py-4 h-auto relative overflow-hidden group shadow-lg rounded-md tracking-wide"
                 >
-                  <span className="relative z-10">Start Free Trial</span>
+                  <span className="relative z-10">Practice Site</span>
                   <motion.div
                     className="absolute inset-0 bg-white/90 opacity-0"
                     initial={{ x: "-100%" }}
@@ -88,18 +92,25 @@ export default function HeroSection() {
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                   />
                 </Button>
+                </Link>
               </PremiumAnimation>
 
-              <PremiumAnimation type="slide" x={20}>
+              {/* <PremiumAnimation type="slide" x={20}>
                 <Button
                   size="lg"
                   variant="outline"
                   className="bg-white/10 backdrop-blur-sm border-white/50 text-white hover:bg-white hover:text-primary hover:border-white font-medium text-base px-10 py-4 h-auto group relative overflow-hidden shadow-lg transition-all duration-300 rounded-md tracking-wide"
+                  onClick={() => {
+                    const coursesSection = document.getElementById("courses-section")
+                    if (coursesSection) {
+                      coursesSection.scrollIntoView({ behavior: "smooth" })
+                    }
+                  }}
                 >
                   <span className="relative z-10">Explore Programs</span>
                   <ArrowRight className="ml-2 h-4 w-4 relative z-10 transition-transform group-hover:translate-x-1" />
                 </Button>
-              </PremiumAnimation>
+              </PremiumAnimation> */}
             </StaggerContainer>
           </div>
 

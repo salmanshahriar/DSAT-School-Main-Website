@@ -1,10 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Card } from "@/components/ui/card"
-import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react"
+import { Quote } from "lucide-react"
 import Image from "next/image"
 
 export default function TestimonialsSection() {
@@ -19,35 +19,17 @@ export default function TestimonialsSection() {
     {
       name: "Jonathan Hira, PhD",
       role: "University of Tromso",
-      image: "/placeholder.svg?height=100&width=100&text=JH",
+      image:
+        "https://media.licdn.com/dms/image/v2/D4D03AQHQdF1_zrBvwA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699385217826?e=1748476800&v=beta&t=t664DbdjoN2-nJ7pIplWH-Y0DYpRy1yTvsGz3ZDsis0",
       quote:
         "Overcome your fears about the SAT exam and embrace the exciting opportunities waiting for you. The future is bright for SAT Prep Academy students! Now is the moment to showcase your talent and potential.",
-      rating: 5,
-      improvement: "320 points",
-      college: "Harvard University",
-    },
-    {
-      name: "Sarah Johnson",
-      role: "Harvard University",
-      image: "/placeholder.svg?height=100&width=100&text=SJ",
-      quote:
-        "The SAT Prep Academy program transformed my approach to standardized testing. Their methodical curriculum and personalized coaching helped me achieve a score I never thought possible. The instructors were incredibly knowledgeable and supportive throughout my journey.",
-      rating: 5,
-      improvement: "280 points",
-      college: "Stanford University",
-    },
-    {
-      name: "Michael Chen",
-      role: "Princeton University",
-      image: "/placeholder.svg?height=100&width=100&text=MC",
-      quote:
-        "What sets SAT Prep Academy apart is their focus on understanding concepts rather than just memorizing answers. Their practice tests accurately simulated the real exam, which helped me feel confident and prepared on test day. I'm grateful for their guidance and support.",
-      rating: 5,
-      improvement: "310 points",
-      college: "MIT",
+      linkedin: "https://www.linkedin.com/in/jonathan-h-60592427/",
     },
   ]
 
+  // Remove the useEffect for auto-rotating testimonials since we only have one
+  // Remove or comment out this useEffect block:
+  /*
   useEffect(() => {
     if (inView) {
       const interval = setInterval(() => {
@@ -56,6 +38,7 @@ export default function TestimonialsSection() {
       return () => clearInterval(interval)
     }
   }, [inView, testimonials.length])
+  */
 
   const handlePrevious = () => {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
@@ -91,7 +74,7 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section ref={ref} className="py-32 bg-gray-50 relative">
+    <section ref={ref} className="py-24 xs:py-28 sm:py-32 bg-gray-50 relative">
       {/* Decorative elements */}
       <div
         className="absolute top-0 left-0 w-full h-24 bg-white"
@@ -107,7 +90,7 @@ export default function TestimonialsSection() {
           variants={titleVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="text-center mb-20"
+          className="text-center mb-16 xs:mb-20 sm:mb-24"
         >
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">Words of Recommendation</h2>
           <div className="w-32 h-1 bg-indigo-500 mx-auto mb-8"></div>
@@ -135,7 +118,7 @@ export default function TestimonialsSection() {
             >
               <Card className="border border-gray-100 shadow-2xl bg-white overflow-hidden">
                 <div className="grid md:grid-cols-5">
-                  <div className="md:col-span-2 bg-indigo-50 p-8 md:p-10 flex items-center justify-center">
+                  <div className="md:col-span-2 bg-indigo-50 p-8 md:p-12 flex items-center justify-center">
                     <div className="text-center">
                       <div className="mx-auto relative mb-6">
                         <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg mx-auto">
@@ -156,33 +139,29 @@ export default function TestimonialsSection() {
                       </h3>
                       <p className="text-indigo-500 font-medium mb-4">{testimonials[currentTestimonial].role}</p>
 
-                      <div className="flex justify-center mb-4">
-                        {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                          <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                        ))}
-                      </div>
-
-                      <div className="space-y-2 text-left bg-white rounded-lg p-4 shadow-md">
-                        <div className="flex justify-between">
-                          <span className="text-sm text-gray-600">Score Improvement:</span>
-                          <span className="text-sm font-bold text-indigo-500">
-                            {testimonials[currentTestimonial].improvement}
-                          </span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-sm text-gray-600">College Admission:</span>
-                          <span className="text-sm font-bold text-indigo-500">
-                            {testimonials[currentTestimonial].college}
-                          </span>
-                        </div>
-                      </div>
+                      <a
+                        href={testimonials[currentTestimonial].linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-medium text-indigo-500 hover:underline inline-flex items-center"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          className="w-4 h-4 mr-1"
+                        >
+                          <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+                        </svg>
+                        LinkedIn Profile
+                      </a>
                     </div>
                   </div>
 
-                  <div className="md:col-span-3 p-8 md:p-10 flex items-center">
+                  <div className="md:col-span-3 p-8 md:p-12 flex items-center">
                     <div>
-                      <Quote className="h-12 w-12 text-indigo-200 mb-6" />
-                      <p className="text-gray-700 italic mb-8 text-xl leading-relaxed">
+                      <Quote className="h-12 w-12 text-indigo-200 mb-8" />
+                      <p className="text-gray-700 italic mb-10 text-xl leading-relaxed">
                         "{testimonials[currentTestimonial].quote}"
                       </p>
 
@@ -198,23 +177,6 @@ export default function TestimonialsSection() {
                               aria-label={`Go to testimonial ${index + 1}`}
                             />
                           ))}
-                        </div>
-
-                        <div className="flex space-x-2">
-                          <button
-                            onClick={handlePrevious}
-                            className="bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors"
-                            aria-label="Previous testimonial"
-                          >
-                            <ChevronLeft className="h-5 w-5 text-indigo-500" />
-                          </button>
-                          <button
-                            onClick={handleNext}
-                            className="bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors"
-                            aria-label="Next testimonial"
-                          >
-                            <ChevronRight className="h-5 w-5 text-indigo-500" />
-                          </button>
                         </div>
                       </div>
                     </div>

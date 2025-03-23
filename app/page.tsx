@@ -13,7 +13,7 @@ export default function Home() {
       <HeroSection />
       <StatsSection />
       <FeaturesSection />
-      <DigitalSATBenefits />
+      {/* <DigitalSATBenefits /> */}
       <CoursesSection />
       <CollegePaySection />
       <TestimonialsSection />
