@@ -6,6 +6,9 @@ import Footer from "@/components/layout/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
+  icons: {
+    icon: '/favicon.ico',
+  },
   title: "DSAT School | Digital SAT Preparation",
   description:
     "Comprehensive Digital SAT preparation with practice tests, interactive quizzes, and personalized study plans",

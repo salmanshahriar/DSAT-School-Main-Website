@@ -94,9 +94,9 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-indigo-500 mr-3 mt-0.5" />
                 <span className="text-gray-600">
-                  House 123, Road 4, Block B
+                78, Motijheel C/A (Sixth Floor),
                   <br />
-                  Mirpur DOHS, Dhaka 1216
+                  Motijheel, Dhaka 1000,
                   <br />
                   Bangladesh
                 </span>

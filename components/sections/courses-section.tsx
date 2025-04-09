@@ -10,7 +10,7 @@ import InteractiveTitle from "@/components/common/interactive/interactive-title-
 import { useState } from "react"
 import { CourseDetailModal } from "@/components/ui/course-detail-modal"
 
-// Add the course descriptions
+// Course descriptions
 const courseDescriptions = {
   mentorship: `আপনার SAT স্কোর 1000-এর নিচে? আপনি কি মনে করেন যে Math এবং English-এর মূল থিওরিটিক্যাল কনসেপ্টগুলোর উপর আরও গভীরভাবে কাজ করা দরকার? তাহলে DSAT Exclusive Mentorship Program আপনার জন্য পারফেক্ট সল্যুশন!
 এই প্রোগ্রামটি SAT-এর Core Skill Building & Theoretical Understanding-এর উপর বিশেষভাবে ফোকাস করে। আমাদের লক্ষ্য হল এমন শিক্ষার্থীদের সাহায্য করা, যারা এখনো SAT-এর কনসেপ্ট নিয়ে কনফিডেন্ট নন এবং পরীক্ষায় ভালো স্কোর করার জন্য একটি স্ট্রাকচার্ড প্ল্যান খুঁজছেন।
@@ -61,7 +61,6 @@ Course Duration : 4 months
  🔹 যারা 1400+ বা 1500+ স্কোর টার্গেট করছেন
  🔹 যারা সঠিক গাইডলাইন ছাড়া প্রস্তুতিতে কনফিডেন্ট না
 🔹যারা পর্যাপ্ত অনুশীলনের প্রয়োজন মনে করেন  
-
   `,
   questionBank: `📚 Question Bank Solve with Prokrity: Digital SAT Edition
 Course Overview:
@@ -114,8 +113,6 @@ Join Prokrity and take your SAT prep to the next level! Let's ace it together!`,
  আমাদের সকল প্রোগ্রামের স্টুডেন্টদের জন্য Discord এ থাকছে একটা Dedicated Problem Solving Community, যেখানে আপনার যেকোনো কুয়েশ্চান আপনি শেয়ার করতে পারবেন। একজন ইন্সট্রাক্টর/কোর্সমেট আপনার সেই প্রবলেমটি সলভ করে সুন্দর করে বুঝিয়ে দিবে।`,
 }
 
-// Add state for modal
-
 export default function CoursesSection() {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -123,17 +120,14 @@ export default function CoursesSection() {
     rootMargin: "-50px 0px",
   })
 
-  // Add state for modal
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedCourse, setSelectedCourse] = useState<any>(null)
 
-  // Function to open modal with course details
   const openCourseDetails = (course: any) => {
     setSelectedCourse(course)
     setIsModalOpen(true)
   }
 
-  // Update the courses array to include fullDescription
   const courses = [
     {
       title: "DSAT SCHOOL MENTORSHIP PROGRAM",
@@ -165,7 +159,7 @@ export default function CoursesSection() {
         "Topic-wise Theory & Solve Classes",
         "Unlimited Topic-wise Quizzes",
         "24/7 Problem Solving Support",
-        " 1-on-1 & Group Sessions ",
+        "1-on-1 & Group Sessions",
         "Exclusive Online Practice Portal",
       ],
       instructor: "Zidan Islam",
@@ -194,7 +188,6 @@ export default function CoursesSection() {
     },
   ]
 
-  // Update the flagship course to include fullDescription
   const featuredCourse = {
     title: "FLAGSHIP PREMIUM PROGRAM",
     price: "9,950",
@@ -215,7 +208,6 @@ export default function CoursesSection() {
     instructorTitle: "SAT 1530 | IELTS - 8",
     fullDescription: courseDescriptions.flagship,
   }
-
 
   const instructors = [
     {
@@ -249,48 +241,11 @@ export default function CoursesSection() {
     { icon: <CheckCircle className="h-3 w-3" />, text: "Premium Practice Site" },
   ]
 
-  // Update the button click handlers in the JSX
-
-  // For the flagship course "View Program Details" button
-  // Find this section in the JSX:
-  // <Button
-  //   variant="outline"
-  //   className="bg-white border-primary text-primary hover:bg-primary/5 flex-1 py-2 h-auto"
-  // >
-  //   View Program Details
-  // </Button>
-
-  // Replace it with:
-  // <Button
-  //   variant="outline"
-  //   className="bg-white border-primary text-primary hover:bg-primary/5 flex-1 py-2 h-auto"
-  //   onClick={() => openCourseDetails(featuredCourse)}
-  // >
-  //   View Program Details
-  // </Button>
-
-  // For the regular course "Details" button
-  // Find this section in the JSX:
-  // <Button variant="outline" className="bg-white border-primary text-primary hover:bg-primary/5 flex-1">
-  //   Details
-  // </Button>
-
-  // Replace it with:
-  // <Button
-  //   variant="outline"
-  //   className="bg-white border-primary text-primary hover:bg-primary/5 flex-1"
-  //   onClick={() => openCourseDetails(course)}
-  // >
-  //   Details
-  // </Button>
-
   return (
     <section className="py-32 relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-full h-full bg-grid-pattern opacity-30"></div>
-
-        {/* Animated background shapes */}
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
@@ -323,29 +278,23 @@ export default function CoursesSection() {
           <div className="inline-block px-5 py-2.5 bg-primary/10 rounded-full text-primary font-medium text-sm mb-8 shadow-sm">
             <span className="tracking-wide">Elevate Your SAT Preparation</span>
           </div>
-
           <InteractiveTitle
             text="Our Premium Programs"
             className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6"
             radius={120}
           />
-
           <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-full"></div>
-
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Choose the program that fits your learning style, schedule, and goals. All programs are designed to maximize
             your score improvement with expert instructors and proven methodologies.
           </p>
         </PremiumAnimation>
 
-        {/* Featured Course Card - Full Width */}
+        {/* Featured Course Card */}
         <PremiumAnimation type="scale" from={0.95} delay={0.2} viewport={true} className="mb-16">
           <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-[0_20px_50px_rgba(66,99,235,0.2)] group">
-            {/* Subtle glow effect */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/30 to-purple-500/30 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
-
             <div className="relative">
-              {/* Main Banner Image */}
               <div className="relative w-full">
                 <Image
                   src="/images/courses-images/flagship-banner.png"
@@ -355,8 +304,6 @@ export default function CoursesSection() {
                   className="w-full transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-
-              {/* Course Title and Price */}
               <div className="p-6 bg-gradient-to-r from-primary/5 to-purple-500/5">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
                   <div>
@@ -367,8 +314,6 @@ export default function CoursesSection() {
                       <span className="text-sm text-gray-600 ml-1">BDT</span>
                     </div>
                   </div>
-
-                  {/* Most Popular Badge */}
                   <div className="mt-4 md:mt-0 bg-primary/10 rounded-lg px-4 py-2 shadow-sm">
                     <div className="flex items-center">
                       <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">
@@ -382,8 +327,6 @@ export default function CoursesSection() {
                   </div>
                 </div>
               </div>
-
-              {/* Instructor Images */}
               <div className="p-6 bg-white">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {instructors.map((instructor, index) => (
@@ -401,8 +344,6 @@ export default function CoursesSection() {
                   ))}
                 </div>
               </div>
-
-              {/* Course Details */}
               <div className="p-6 bg-white border-t border-gray-100">
                 <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 gap-4">
                   <div>
@@ -412,7 +353,6 @@ export default function CoursesSection() {
                       strategies
                     </p>
                   </div>
-
                   <div className="flex flex-col sm:flex-row gap-4">
                     <div className="flex items-center bg-primary/10 rounded-full px-4 py-2 text-primary">
                       <Phone className="h-5 w-5 mr-2" />
@@ -424,10 +364,6 @@ export default function CoursesSection() {
                     </div>
                   </div>
                 </div>
-
-                
-
-                {/* Instructors */}
                 <div className="mb-6">
                   <h4 className="text-lg font-bold text-gray-900 mb-3">Learn from the best instructors</h4>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -450,8 +386,6 @@ export default function CoursesSection() {
                     ))}
                   </div>
                 </div>
-
-                {/* Course Features */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
                   {featuredCourseDetails.map((detail, i) => (
                     <div
@@ -465,10 +399,15 @@ export default function CoursesSection() {
                     </div>
                   ))}
                 </div>
-
-                {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button className="bg-primary hover:bg-primary/90 text-white flex-1 py-2 h-auto relative z-20">
+                  <Button
+                    className="bg-primary hover:bg-primary/90 text-white flex-1 py-2 h-auto relative z-20"
+                    onClick={() => {
+                      const message = `Hello, I'm interested in the ${featuredCourse.title}.\nPlease provide more information.`
+                      const url = `https://wa.link/1cbhtw?text=${encodeURIComponent(message)}`
+                      window.open(url, '_blank')
+                    }}
+                  >
                     <span>Enroll Now</span>
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
@@ -479,7 +418,6 @@ export default function CoursesSection() {
                   >
                     View Program Details
                   </Button>
-                 
                 </div>
               </div>
             </div>
@@ -491,10 +429,7 @@ export default function CoursesSection() {
           {courses.map((course, index) => (
             <PremiumAnimation key={index} type="fade" viewport={true}>
               <div className="bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 group relative">
-                {/* Subtle glow effect on hover */}
                 <div className="absolute -inset-0.5 bg-primary/30 rounded-xl opacity-0 group-hover:opacity-100 blur-sm transition-all duration-300 pointer-events-none"></div>
-
-                {/* Course Image */}
                 <div className="relative">
                   <Image
                     src={course.image || "/placeholder.svg"}
@@ -504,10 +439,7 @@ export default function CoursesSection() {
                     className="w-full transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-
-                {/* Course Details */}
                 <div className="p-6">
-                  {/* Course Title and Price */}
                   <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
                     <div>
                       <h3 className="text-xl font-serif font-bold text-gray-900 mb-2">{course.title}</h3>
@@ -517,8 +449,6 @@ export default function CoursesSection() {
                         <span className="text-sm text-gray-600 ml-1">{course.currency}</span>
                       </div>
                     </div>
-
-                    {/* Instructor */}
                     <div className="mt-4 md:mt-0 flex items-center">
                       <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
                         {course.instructor.charAt(0)}
@@ -529,8 +459,6 @@ export default function CoursesSection() {
                       </div>
                     </div>
                   </div>
-
-                  {/* Course Details */}
                   <div className="mb-6">
                     <h4 className="text-lg font-bold text-gray-900 mb-3">Program Features</h4>
                     <ul className="space-y-2">
@@ -549,10 +477,15 @@ export default function CoursesSection() {
                       </p>
                     )}
                   </div>
-
-                  {/* Action Buttons */}
                   <div className="flex gap-3">
-                    <Button className="flex-1 bg-primary hover:bg-primary/90 text-white relative z-20">
+                    <Button
+                      className="flex-1 bg-primary hover:bg-primary/90 text-white relative z-20"
+                      onClick={() => {
+                        const message = `Hello, I'm interested in the ${course.title}.\nPlease provide more information.`
+                        const url = `https://wa.link/1cbhtw?text=${encodeURIComponent(message)}`
+                        window.open(url, '_blank')
+                      }}
+                    >
                       <span>Enroll Now</span>
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
@@ -587,6 +520,3 @@ export default function CoursesSection() {
     </section>
   )
 }
-
-
-

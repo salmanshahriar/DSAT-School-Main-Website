@@ -53,26 +53,24 @@ export function CourseDetailModal({ isOpen, onClose, course }: CourseDetailModal
                 <span className="text-sm text-gray-600 ml-1">{course.currency}</span>
               </div>
             </div>
-
-            
           </div>
 
-        {/* Course Features */}
-        <div className="mb-6">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">Program Features</h3>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {course.details.map((detail, i) => (
-              <li key={i} className="flex items-start text-gray-700">
-                <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-2 mt-0.5 flex-shrink-0">
-                  <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <span>{detail}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+          {/* Course Features */}
+          <div className="mb-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Program Features</h3>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {course.details.map((detail, i) => (
+                <li key={i} className="flex items-start text-gray-700">
+                  <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-2 mt-0.5 flex-shrink-0">
+                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span>{detail}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Course Description */}
           {course.fullDescription && (
@@ -84,11 +82,19 @@ export function CourseDetailModal({ isOpen, onClose, course }: CourseDetailModal
 
           {/* Action Button */}
           <div className="mt-6">
-            <Button className="w-full bg-primary hover:bg-primary/90 text-white py-6 h-auto">Enroll Now</Button>
+            <Button
+              className="w-full bg-primary hover:bg-primary/90 text-white py-6 h-auto"
+              onClick={() => {
+                const message = `Hello, I'm interested in the ${course.title}.\nPlease provide more information.`
+                const url = `https://wa.link/1cbhtw?text=${encodeURIComponent(message)}`
+                window.open(url, '_blank')
+              }}
+            >
+              Enroll Now
+            </Button>
           </div>
         </div>
       </DialogContent>
     </Dialog>
   )
 }
-
