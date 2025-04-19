@@ -216,12 +216,12 @@ export default function CoursesSection() {
       details: "EBRW: 770, Math: 760",
       image: "/images/courses-images/flagship-prokrity.png",
     },
-    {
-      name: "Ayesha A Chowdhury",
-      credentials: "Tutored 300+ Students | SAT 1530",
-      details: "University of Adelaide, Australia",
-      image: "/images/courses-images/flagship-ayesha.png",
-    },
+    // {
+    //   name: "Ayesha A Chowdhury",
+    //   credentials: "Tutored 300+ Students | SAT 1530",
+    //   details: "University of Adelaide, Australia",
+    //   image: "/images/courses-images/flagship-ayesha.png",
+    // },
     {
       name: "Rajanya Tridha",
       credentials: "SAT 1510 | EBRW: 710, Math: 800",

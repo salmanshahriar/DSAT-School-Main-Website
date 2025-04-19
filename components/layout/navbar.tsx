@@ -25,9 +25,9 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "Programs", href: "/programs" },
     { name: "Practice Site", href: "https://qb.dsatschool.com/" },
-    { name: "Resources", href: "/resources" },
-    { name: "Team", href: "/team" },
-    { name: "Contact", href: "/contact" },
+    { name: "Resources", href: "https://discord.gg/7HHdd72gGQ" },
+    // { name: "Team", href: "/team" },
+    // { name: "Contact", href: "/contact" },
   ]
 
   return (
@@ -75,7 +75,7 @@ export default function Navbar() {
             </StaggerContainer>
 
             <StaggerContainer className="hidden md:flex items-center space-x-5" staggerChildren={0.1}>
-              <PremiumAnimation type="slide" x={20}>
+              {/* <PremiumAnimation type="slide" x={20}>
                 <Button
                   variant="outline"
                   className="border-primary/80 bg-white text-primary font-medium relative overflow-hidden group px-6 py-2 h-10 rounded-md"
@@ -88,7 +88,7 @@ export default function Navbar() {
                     transition={{ duration: 0.3 }}
                   />
                 </Button>
-              </PremiumAnimation>
+              </PremiumAnimation> */}
 
               <PremiumAnimation type="slide" x={20}>
                 <Link href="https://discord.gg/hBGFDBzA6g">

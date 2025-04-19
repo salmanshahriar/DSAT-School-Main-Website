@@ -12,9 +12,9 @@ export default function Home() {
     <>
       <HeroSection />
       <StatsSection />
+      <CoursesSection />
       <FeaturesSection />
       {/* <DigitalSATBenefits /> */}
-      <CoursesSection />
       <CollegePaySection />
       <TestimonialsSection />
       <CTASection />

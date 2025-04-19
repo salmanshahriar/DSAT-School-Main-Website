@@ -89,16 +89,17 @@ export default function CollegePaySection() {
                 We offer services to students to pay their different application and registration fees in USD. Simplify
                 your international payments for college applications, tests, and more.
               </p>
-
-              <Button className="bg-white text-primary hover:bg-white/90 font-medium text-base px-8 py-6 h-auto rounded-full shadow-lg group">
-                <span className="relative z-10">Pay with us</span>
-                <motion.div
-                  className="absolute inset-0 bg-white/90 opacity-0 rounded-full"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "0%", opacity: 1 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                />
-              </Button>
+              <a href="https://wa.link/1cbhtw" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-white text-primary hover:bg-white/90 font-medium text-base px-8 py-6 h-auto rounded-full shadow-lg group">
+                  <span className="relative z-10">Pay with us</span>
+                  <motion.div
+                    className="absolute inset-0 bg-white/90 opacity-0 rounded-full"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "0%", opacity: 1 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                  />
+                </Button>
+              </a>
             </PremiumAnimation>
           </div>
 
